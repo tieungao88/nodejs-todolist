@@ -17,7 +17,11 @@ pipeline {
             // agent {
             //     docker { image 'node:13-alpine' }
             // }
-            agent 123
+            agent {
+                node {
+                    label "123"
+                }
+            }
             steps {
                 script {
                     echo "Building docker image"
