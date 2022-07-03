@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     echo "Building docker image"
-                    buildImage "todolist-app" "test"
+                    buildImage(todolist-app,test)
                     echo "Build Done"
                 }
             }
