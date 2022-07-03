@@ -13,6 +13,18 @@ def gv
 pipeline {
     agent none
     stages {
+        stage("init") {
+            agent {
+                node {
+                    label "123"
+                }
+            }
+            steps {
+                script {
+                    gv = load "script.groovy"
+                }
+            }
+        }
         stage("build-docker") {
             // agent {
             //     docker { image 'node:13-alpine' }
